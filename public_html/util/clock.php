@@ -3,12 +3,9 @@ require_once "../../config.php";
 
 outside("../");
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $ct = getJWT("exp") - time();
-
-    if(date("i", $ct) < 15 && date("h", $ct) == 1 && date("d", $ct) == 1){
-        echo json_encode(["time" => date("i:s", $ct)]);
-    }
+//torre brucia di tumore, in terza dovevi morire
+if(!empty($_SERVER["HTTP_REFERER"])){
+    echo json_encode(["timer" => getJWT("exp") - time()]);
 }
 
 ?>

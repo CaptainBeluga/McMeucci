@@ -90,13 +90,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <a class="nav-link" aria-current="page" href="./logout">Logout</a>
               </li>
 
-              <li class="nav-item nav-link text-danger fw-bold" id="clock"></li>
+              <li class="nav-item nav-link fw-bold" id="clock"></li>
+              <li class="nav-item nav-link d-none" id="extendedClock"></li>
             </ul>
           </div>
         </div>
       </nav>
 
-      
+
       <div class="modal fade" id="clearCartModal" tabindex="-1" aria-labelledby="cartCleared" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -192,11 +193,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       <?php tag(); ?>
       
-<script src="./js/cartManagement.js"></script>
+  <script src="./js/cartManagement.js"></script>
 
-<script src="./js/clock.js"></script>
+  <script src="./js/clock.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>

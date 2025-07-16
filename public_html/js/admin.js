@@ -31,7 +31,7 @@ function applyResponse(e, fd, method="GET", modalClose=false){
         fd.append("csrf", document.querySelector("[type=hidden]").value)
     }
 
-    fetch("admin.php", {
+    fetch("admin", {
         method: method,
         body: fd
 
@@ -50,7 +50,7 @@ function applyResponse(e, fd, method="GET", modalClose=false){
         }
 
         let c = document.createElement("script")
-        c.src = "./util/adminJS.php"
+        c.src = "./util/adminJS"
         document.body.appendChild(c)
     })
 }

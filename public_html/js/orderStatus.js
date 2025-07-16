@@ -3,10 +3,10 @@ let basicClass = "spinner-grow spinner-grow-sm me-2"
 
 try{
     setInterval(()=>{
-        fetch("./util/status.php", {method: "POST"}).then(resp => resp.json())
-        .then(resp => {
-            Object.keys(resp).forEach(key => {
-                data = resp[key].split("-")
+        fetch("./util/status").then(r => r.json())
+        .then(r => {
+            Object.keys(r).forEach(key => {
+                data = r[key].split("-")
                 statusLabel = statusLabels[key]
 
                 statusLabel.querySelector("span").textContent = data[0]
@@ -16,5 +16,5 @@ try{
                 })
             })
         })
-    }, 500);
+    }, 1000);
 }catch{} //pass exceptions (JWT Expired -> 301 to login.php)

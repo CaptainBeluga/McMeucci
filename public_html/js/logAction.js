@@ -1,6 +1,6 @@
 function logAction(url, formData, redirectURL){
     grecaptcha.ready(() => {
-        grecaptcha.execute("<RECAPTCHA_PUBLIC_KEY>", {action: 'submit'}).then(token => {
+        grecaptcha.execute("6LcvpF0qAAAAAMHiFnUoBEsB6WeHoMy1Baqrmcll", {action: 'submit'}).then(token => {
             formData.append("captcha", token)
             fetch(url, {
                 method: "POST",

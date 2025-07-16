@@ -38,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   else{
     //Captcha Failed
-    echo returnError("USERNAME or PASSWORD Invalid");
+    echo returnError("CAPTCHA | USERNAME or PASSWORD Invalid");
   }
   
   
@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <?php tag(); ?>
 
 
-  <script src="https://www.google.com/recaptcha/api.js?render=<RECAPTCHA_PUBLIC_KEY>"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcvpF0qAAAAAMHiFnUoBEsB6WeHoMy1Baqrmcll"></script>
 
   <script src="./js/logAction.js"></script>
   <script src="./js/login.js"></script>

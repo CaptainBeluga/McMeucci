@@ -125,8 +125,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && getUserInfo("isAdmin") > 0 && $_POST[
             <a class="nav-link disabled fw-bold">Admin Level: <?= getUserInfo("isAdmin") ?> | <?= ADMIN_LVLS[getUserInfo("isAdmin")] ?></a>
           </li>
 
-          <li class="nav-item nav-link text-danger fw-bold" id="clock"></li>
-
+          <li class="nav-item nav-link fw-bold" id="clock"></li>
+          <li class="nav-item nav-link d-none" id="extendedClock"></li>
         </ul>
       </div>
     </div>
@@ -256,7 +256,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && getUserInfo("isAdmin") > 0 && $_POST[
 
                 <td>
                    
-                    <?php foreach(json_decode($row["cart"],True) as $k=>$v): $item = translateCart($k);?>
+                    <?php foreach(json_decode($row["cart"], true) as $k=>$v): $item = translateCart($k);?>
                         <span class="list-group-item"><strong><?= $item["name"] ?></strong> x<?= $v ?></span><hr>
                     <?php endforeach; ?>
                 </td>

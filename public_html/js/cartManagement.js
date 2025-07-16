@@ -3,7 +3,7 @@ function cart(e,action){
     fd.append("itemID", e.target.getAttribute("item-id"))
     fd.append("action", action)
 
-    fetch("index.php", {
+    fetch("index", {
         method: "POST",
         body: fd
 

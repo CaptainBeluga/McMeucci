@@ -3,7 +3,7 @@ require_once "../../config.php";
 
 outside("../");
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if(!empty($_SERVER["HTTP_REFERER"])){
     $status = [];
     $i = 0;
 
@@ -16,7 +16,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     echo json_encode($status);
 }
-else{
-    header("Location: ../");
-}
+
 ?>

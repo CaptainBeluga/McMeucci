@@ -61,10 +61,10 @@ if(isset($_GET["paymentId"]) && isset($_GET["token"]) && isset($_GET["PayerID"])
           $d["state"] . " - " . $d["transactions"][0]["related_resources"][0]["sale"]["state"]
         ];
 
-        $stmt = $conn->prepare("INSERT INTO `payments_info` (`id`, `payID`, `saleID`, `username` ,`email`, `firstName`, `lastName`, `payerID`, `countryCode`, `status`) VALUES
-        (NULL,?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO `payments_info` (`id`, `payID`, `saleID` ,`email`, `firstName`, `lastName`, `payerID`, `countryCode`, `status`) VALUES
+        (NULL,?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $stmt->bind_param("sssssssss", $data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7], $data[8]);
+        $stmt->bind_param("ssssssss", $data[0], $data[1], $data[2], $data[3], $data[4], $data[5], $data[6], $data[7]);
         $stmt->execute();
 
         writeCart("{}");
@@ -122,7 +122,8 @@ outside();
             <a class="nav-link" href="./logout.php">Logout</a>
           </li>
 
-          <li class="nav-item nav-link text-danger fw-bold" id="clock"></li>
+          <li class="nav-item nav-link fw-bold" id="clock"></li>
+          <li class="nav-item nav-link d-none" id="extendedClock"></li>
         </ul>
       </div>
     </div>
@@ -165,7 +166,7 @@ outside();
 
 
         <div class="card-footer text-body-secondary">
-          <br>Username : <strong><?= $order["username"] ?></strong> <br><br> Date & Time : <strong><?= $order["timestamp"]?></strong>
+          <br>Date & Time : <strong><?= $order["timestamp"]?></strong>
         </div>
 
       </div>
